@@ -239,13 +239,11 @@ const PaperSelect = ({
             visible={visible}
             dismissable={false}
           >
-            <Dialog.Title style={dialogTitleStyle}>
-              {label}
-              {
+            <Dialog.Title style={dialogTitleStyle}>{label}</Dialog.Title>
+            <Dialog.Content>
+                {
                   addNewButton && addNewButton
                 }
-              </Dialog.Title>
-            <Dialog.Content>
               <Dialog.ScrollArea
                 style={{
                   height: 300,
