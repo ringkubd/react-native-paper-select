@@ -300,7 +300,7 @@ const PaperSelect = ({
                 addNewButton && (
                   <View style={{flexDirection: 'column', justifyContent: 'center'}}>
                     <View style={{marginBottom: 10}}>
-                      <TextInput label={label} onChangeText={setNewCat}/>
+                      <TextInput label={label} onChangeText={(text) => setNewCat(text)}/>
                     </View>
                     <View style={{justifyContent: 'flex-end'}}>
                       <Button mode="contained" onPress={_postAddNewButton}>Add</Button>
