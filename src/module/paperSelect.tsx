@@ -188,6 +188,10 @@ const PaperSelect = ({
     setList(newData);
   };
 
+  const _postAddNewButton = () => {
+    addNewButtonAction(newCat);
+  }
+
   return (
     <>
       <View style={styles.container}>
@@ -299,7 +303,7 @@ const PaperSelect = ({
                       <TextInput label={label} onChangeText={setNewCat}/>
                     </View>
                     <View style={{justifyContent: 'flex-end'}}>
-                      <Button mode="contained" onPress={addNewButtonAction}>Add</Button>
+                      <Button mode="contained" onPress={_postAddNewButton}>Add</Button>
                     </View>
                   </View>)
               }
