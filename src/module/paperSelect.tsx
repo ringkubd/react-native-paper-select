@@ -241,9 +241,6 @@ const PaperSelect = ({
           >
             <Dialog.Title style={dialogTitleStyle}>{label}</Dialog.Title>
             <Dialog.Content>
-                {
-                  addNewButton && addNewButton
-                }
               <Dialog.ScrollArea
                 style={{
                   height: 300,
@@ -292,6 +289,12 @@ const PaperSelect = ({
                     : _renderListForSingle()}
                 </ScrollView>
               </Dialog.ScrollArea>
+              {
+                  addNewButton && (<> 
+                  <TextInput label="Name"/>
+                  <Button>Add</Button>
+                  </>)
+                }
             </Dialog.Content>
             <Dialog.Actions style={{ marginTop: -20 }}>
               <Button labelStyle={dialogButtonLabelStyle} onPress={_hideDialog}>
