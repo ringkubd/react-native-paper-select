@@ -41,6 +41,7 @@ const PaperSelect = ({
   textInputColor,
   textInputHeight,
   dialogButtonLabelStyle,
+  addNewButton
 }: paperSelect) => {
   const [selectText, setSelectText] = useState(value);
   const [searchKey, setSearchKey] = useState('');
@@ -262,6 +263,9 @@ const PaperSelect = ({
                     color: searchStyle?.textColor || '#000',
                   }}
                 />
+                {
+                  addNewButton && addNewButton
+                }
                 {multiEnable === true && (
                   <TouchableOpacity
                     style={{ flexDirection: 'row', alignItems: 'center' }}
