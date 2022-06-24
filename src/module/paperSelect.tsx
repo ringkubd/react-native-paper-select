@@ -18,31 +18,32 @@ import CheckboxInput from '../components/checkBox';
 import type { paperSelect } from '../interface/paperSelect.interface';
 
 const PaperSelect = ({
-  label,
-  arrayList,
-  selectedArrayList,
-  multiEnable,
-  errorText,
-  value,
-  onSelection,
-  dialogStyle,
-  dialogTitleStyle,
-  searchStyle,
-  checkboxColor,
-  checkboxLabelStyle,
-  checkboxUncheckedColor,
-  errorStyle,
-  textInputMode,
-  underlineColor,
-  activeUnderlineColor,
-  activeOutlineColor,
-  outlineColor,
-  textInputBackgroundColor,
-  textInputColor,
-  textInputHeight,
-  dialogButtonLabelStyle,
-  addNewButton
-}: paperSelect) => {
+                       label,
+                       arrayList,
+                       selectedArrayList,
+                       multiEnable,
+                       errorText,
+                       value,
+                       onSelection,
+                       dialogStyle,
+                       dialogTitleStyle,
+                       searchStyle,
+                       checkboxColor,
+                       checkboxLabelStyle,
+                       checkboxUncheckedColor,
+                       errorStyle,
+                       textInputMode,
+                       underlineColor,
+                       activeUnderlineColor,
+                       activeOutlineColor,
+                       outlineColor,
+                       textInputBackgroundColor,
+                       textInputColor,
+                       textInputHeight,
+                       dialogButtonLabelStyle,
+                       addNewButton,
+                       addNewButtonAction
+                     }: paperSelect) => {
   const [selectText, setSelectText] = useState(value);
   const [searchKey, setSearchKey] = useState('');
   const [arrayHolder, setArrayHolder] = useState([...arrayList]);
@@ -50,6 +51,8 @@ const PaperSelect = ({
   const [list, setList] = useState([...arrayList]);
 
   const [selectedList, setSelectedList] = useState([...selectedArrayList]);
+
+  const [newCat, setNewCat] = useState();
 
   const selectInputRef = useRef<any>(null);
   const [visible, setVisible] = useState(false);
@@ -290,11 +293,16 @@ const PaperSelect = ({
                 </ScrollView>
               </Dialog.ScrollArea>
               {
-                  addNewButton && (<> 
-                  <TextInput label="Name"/>
-                  <Button>Add</Button>
-                  </>)
-                }
+                addNewButton && (
+                  <View style={{flexDirection: 'column', justifyContent: 'center'}}>
+                    <View style={{marginBottom: 10}}>
+                      <TextInput label={label} onChangeText={setNewCat}/>
+                    </View>
+                    <View style={{justifyContent: 'flex-end'}}>
+                      <Button mode="contained" onPress={addNewButtonAction}>Add</Button>
+                    </View>
+                  </View>)
+              }
             </Dialog.Content>
             <Dialog.Actions style={{ marginTop: -20 }}>
               <Button labelStyle={dialogButtonLabelStyle} onPress={_hideDialog}>
