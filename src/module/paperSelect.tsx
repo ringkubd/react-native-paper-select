@@ -239,7 +239,12 @@ const PaperSelect = ({
             visible={visible}
             dismissable={false}
           >
-            <Dialog.Title style={dialogTitleStyle}>{label}</Dialog.Title>
+            <Dialog.Title style={dialogTitleStyle}>
+              {label}
+              {
+                  addNewButton && addNewButton
+                }
+              </Dialog.Title>
             <Dialog.Content>
               <Dialog.ScrollArea
                 style={{
@@ -291,9 +296,6 @@ const PaperSelect = ({
               </Dialog.ScrollArea>
             </Dialog.Content>
             <Dialog.Actions style={{ marginTop: -20 }}>
-                {
-                  addNewButton && addNewButton
-                }
               <Button labelStyle={dialogButtonLabelStyle} onPress={_hideDialog}>
                 Done
               </Button>
