@@ -189,7 +189,7 @@ const PaperSelect = ({
   };
 
   const _postAddNewButton = () => {
-    addNewButtonAction(newCat);
+    addNewButtonAction && addNewButtonAction(newCat);
   }
 
   return (
