@@ -39,5 +39,5 @@ export interface paperSelect {
   textInputHeight?: number;
   dialogButtonLabelStyle?: TextStyle;
   addNewButton?:boolean;
-  addNewButtonAction: (cat: any) => string;
+  addNewButtonAction?: (cat: any) => string;
 }
