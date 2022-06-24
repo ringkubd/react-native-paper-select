@@ -52,7 +52,7 @@ const PaperSelect = ({
 
   const [selectedList, setSelectedList] = useState([...selectedArrayList]);
 
-  const [newCat, setNewCat] = useState();
+  const [newCat, setNewCat] = useState<any>(null);
 
   const selectInputRef = useRef<any>(null);
   const [visible, setVisible] = useState(false);
