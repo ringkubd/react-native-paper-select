@@ -38,4 +38,5 @@ export interface paperSelect {
   textInputColor?: string;
   textInputHeight?: number;
   dialogButtonLabelStyle?: TextStyle;
+  addNewButton?:false;
 }
