@@ -263,9 +263,6 @@ const PaperSelect = ({
                     color: searchStyle?.textColor || '#000',
                   }}
                 />
-                {
-                  addNewButton && addNewButton
-                }
                 {multiEnable === true && (
                   <TouchableOpacity
                     style={{ flexDirection: 'row', alignItems: 'center' }}
@@ -294,6 +291,9 @@ const PaperSelect = ({
               </Dialog.ScrollArea>
             </Dialog.Content>
             <Dialog.Actions style={{ marginTop: -20 }}>
+                {
+                  addNewButton && addNewButton
+                }
               <Button labelStyle={dialogButtonLabelStyle} onPress={_hideDialog}>
                 Done
               </Button>
